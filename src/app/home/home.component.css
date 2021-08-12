@@ -1,0 +1,65 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+.column {
+  float: left;
+  width: 45%;
+  height: 400px; 
+  margin-right: 1.1%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+html{
+    padding: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+}
+
+.column{
+    flex: 50%;
+    padding: 10px;
+    height: 600px;
+}
+.column{
+    flex:50%;
+    padding:10px;
+    height: 450px;
+    left: 45px;
+}
+
+.image{
+    padding:0px;
+    width:100%;
+    height:30%;
+}
+
+.icon{
+    color: blue;
+}
+.chooseBtn{
+    text-align: center;
+    background-color: black;
+    font: white;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.contact{
+    
+}
