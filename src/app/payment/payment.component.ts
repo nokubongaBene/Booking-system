@@ -11,9 +11,14 @@ export class PaymentComponent implements OnInit {
   'April', 'May', 'June',
   'July', 'August', 'September',
    'October', 'November', 'December'];
+
+   displayName=window.localStorage.getItem('roomName');
+   totalCost=window.localStorage.getItem('bookingPrice');
+   
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }
