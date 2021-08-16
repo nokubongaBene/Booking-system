@@ -3,27 +3,22 @@ html{
     padding: 0px;
 }
 
-*{
-    box-sizing: border-box;
-}
-
 .row{
     display: flex;
 }
 
 .column{
-    float:left;
-        width: 50%;
+    float:left; 
+        width: 48%;
         height: 300px; 
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        
+        margin-left: 15px;
       }
-.column1 {
-    float: right;
-    width: 50%;
-    height: 300px; 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  .cost{
+    position: absolute;
+    bottom: 0px;
   }
-
 
 * {
   box-sizing: border-box;
@@ -39,10 +34,6 @@ body {
     font-family: Arial;
     font-size: 17px;
     padding: 8px;
-  }
-  
-  * {
-    box-sizing: border-box;
   }
   
   .row {
@@ -75,7 +66,7 @@ body {
   }
   
   .container {
-    background-color: #f2f2f2;
+    background-color: #7E852D;
     padding: 5px 20px 15px 20px;
     border: 1px solid lightgrey;
     border-radius: 3px;

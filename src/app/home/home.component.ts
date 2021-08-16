@@ -22,8 +22,6 @@ export class HomeComponent implements OnInit {
 
     // const roomDetails = {roomName:roomName, roomPrice:roomPrice};
     
-
-    
     // alert(roomName);
   }
   imgCollection = [
