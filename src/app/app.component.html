@@ -6,7 +6,7 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<ng-image-slider autoSlide=true autoSlide="{interval: 2, stopOnHover: false}" [images]="imgCollection" slideImage="1" [imageSize]="{width: '100%', height: '50%'}" #nav></ng-image-slider>
+<ng-image-slider autoSlide=true [autoSlide]="{interval: 3, stopOnHover: true}" [infinite]="true" [images]="imgCollection" [slideImage]="1" [imageSize]="{width: '100%', height: '50%'}" #nav></ng-image-slider>
 <div class="slide-container">
 </div>
 
