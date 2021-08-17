@@ -1,6 +1,8 @@
 
 html{
     padding: 0px;
+    background-color: #835B5B;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .row{
@@ -11,9 +13,18 @@ html{
     float:left; 
         width: 48%;
         height: 300px; 
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
         
         margin-left: 15px;
+      }
+      .columnM{
+        position: absolute;
+        bottom: 67%;
+        float:left; 
+        width: 25%;
+        height: 120px; 
+        /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
+        margin-left: 300px;
       }
   .cost{
     position: absolute;
@@ -100,7 +111,6 @@ body {
     width: 100%;
     border-radius: 3px;
   }
-  
   
   a {
     color: #2196F3;
