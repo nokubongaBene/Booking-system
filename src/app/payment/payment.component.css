@@ -8,21 +8,26 @@ html{
 .row{
     display: flex;
 }
-
+/* .flex-box{
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+} */
 .column{
     float:left; 
         width: 48%;
         height: 300px; 
+        bottom:1%;
         /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-        
         margin-left: 15px;
       }
       .columnM{
         position: absolute;
-        bottom: 67%;
+        bottom: 1%;
         float:left; 
         width: 25%;
-        height: 120px; 
+        height: 200px; 
         /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
         margin-left: 300px;
       }
