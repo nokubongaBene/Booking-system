@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col -md-6">
+            <h3>Hotel booking Registration</h3>
+            <div class="form-group">
+                <input type="text" id="email" name="email" [(ngModel)]="email" placeholder="email">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" [(ngModel)]="password"  placeholder="Enter Password" required> -->
+            </div>
+            <div class="form-group">
+                <button class="btn" (click)="register()" name="register">Register</button>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+                <p *ngIf="errorMessage.length > 0">
+                    {{errorMessage}}</p>
+                <p *ngIf="error.message.length > 0">
+                    {{errorMessage}}</p>
+            </div> 
+    </div>
+</div>

@@ -27,4 +27,6 @@ export class AppComponent {
       thumbImage: 'https://cst-media3.viomassl.com/3940/324702/1024x768s'
     }
 ];
+
+
 }

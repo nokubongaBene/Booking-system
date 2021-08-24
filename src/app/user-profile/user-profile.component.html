@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+        <div class="text-info" *ngIf="authService.currentUser">
+            <h5 class="alldata">
+                user Information
+            </h5>
+            <h4><b>User ID:</b>{{authService.currentUserId}}</h4>
+            <h4><b>User Email:</b>{{authService.currentUserName}}</h4>
+            <!-- <button class="btn" (click)="authService.signOut()">Logout</button>  -->
+    </div>
+</div>
