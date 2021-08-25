@@ -51,7 +51,7 @@ export class LogInComponent implements OnInit {
       this.errorMessage = "Your password is too short.";
     }else{
        this.authService.loginUserEmail(this.email, this.password)
-       
+       this.router.navigate(['/home']);
     }
   }
   }
