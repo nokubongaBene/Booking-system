@@ -40,7 +40,6 @@ export class LogInComponent implements OnInit {
    }
    
   validateForm(userEmail:any, password:any){
-    console.log("hi");
     if(this.userEmail.length == 0){
       this.errorMessage = "Please enter email address.";
     }
