@@ -6,12 +6,21 @@
     production: false,
     firebaseConfig: {
       apiKey: "AIzaSyB5rDfAExYHYQxxVKY5tv5hhVqjEwo6_N0",
-      authDomain: "bookingsystem-20298.firebaseapp.com",
-      projectId: "bookingsystem-20298",
-      storageBucket: "bookingsystem-20298.appspot.com",
-      messagingSenderId: "1008461009042",
-      appId: "1:1008461009042:web:53d353b6afd2497c97964b",
-      measurementId: "G-4Q1V46NVPK"
+      
+        authDomain: "bookingsystem-20298.firebaseapp.com",
+      
+        databaseURL: "https://bookingsystem-20298-default-rtdb.firebaseio.com",
+      
+        projectId: "bookingsystem-20298",
+      
+        storageBucket: "bookingsystem-20298.appspot.com",
+      
+        messagingSenderId: "1008461009042",
+      
+        appId: "1:1008461009042:web:53d353b6afd2497c97964b",
+      
+        measurementId: "G-4Q1V46NVPK"
+      
     }
  };
 

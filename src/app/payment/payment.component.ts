@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from 'src/app/services/auth.service';
+
 
 @Component({
   selector: 'app-payment',
@@ -35,13 +37,23 @@ export class PaymentComponent implements OnInit {
    city: any = "";
    zipCode: any= "";
    
-  constructor() { }
-
+  constructor(private auth:AuthService) { }
+  roomsInfoList : any;
   ngOnInit(): void {
-
+    this.roomsInfoList =  this.auth.getRoomsInfo();
   }
+  // selectRoom(index:any){
+  //   this.auth.displayroomInfo();
+  //   //  console.log(this.employees[index].id)
+  //   this.roomData =this.roomData[index].roomName;
+  //   this.roomData = this.roomData[index].roomPrice;
+  //   this.roomData = this.roomData[index].roomDetails;
+  
+  //  }
 
   saveDetails(){
+  
+    this.auth.displayroomInfo();
 
     if(this.checkIn==""){
       alert("Please choose check In date.");
@@ -80,6 +92,9 @@ export class PaymentComponent implements OnInit {
       window.localStorage.setItem('pCity', this.city);
       window.localStorage.setItem('pProvince', this.province);
       window.localStorage.setItem('pZipCode', this.zipCode);
+
+      this.auth.bookingsInfoDatabase(this.checkIn, this.checkOut,this.numAdults, this.numKids, this.fname,this.fname,
+                    this.email, this.cellphone, this.address, this.city, this.province, this.zipCode);
    
       window.location.href="display-info";
     }

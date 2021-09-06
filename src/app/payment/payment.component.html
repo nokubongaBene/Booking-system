@@ -63,7 +63,14 @@
                 <input type="text" id="cvv" name="cvv" onkeypress="return event.charCode>=48 && event.charCode<=57" maxlength="3" placeholder="CVV">
         </div>
     </div>
-    <h3>{{displayName}}  {{totalCost}}</h3>
+    <div *ngFor="let li of roomsInfoList | async">
+    <h3>{{li.rname}}  {{li.rprice}}</h3>
+    <img class="image"
+    src={{li.rImage}}
+    alt="Avatar"
+    
+  />
+    </div>
     <input type="submit" value="Save & Continue"  (click)="saveDetails()" class="btn">
 </div>
       

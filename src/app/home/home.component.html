@@ -6,67 +6,28 @@
 </head>
         
 <h1 style="text-align:center">  Serenity Awaits </h1>
+<div style="text-align:center"> {{ (user | async) }} </div>
 <div class="row">
+    <div *ngFor="let li of roomsInfoList | async">
   <div class="column" style="background-color:#aaa;">
       <img class="image"
-          src="https://cst-media3.viomassl.com/3940/324702/1024x768s"
+          src={{li.rImage}}
           alt="Avatar"
           
         />
-        <h2>Luxury Suite</h2>
-        <p>These lovely rooms marry elements derived from ancient kraals, bush 
-            huts and traditional homesteads, alluding to a three-way common destiny.
-            They are luxuriously furnished and open-plan, with private patios overlooking the bush. 
+        <h2>{{li.rname}}</h2>
+        <p>{{li.rDescription}}
         </p>
                     
-        <p> From Only <b>R2 500</b> Per Room Per Night.</p>
+        <p> From Only <b>{{li.rprice}}</b> Per Room Per Night.</p>
     
         <p style="letter-spacing:25px"><i class="icon" style="font-size:36px" class="fa">&#xf0f5;</i>
             <i class="icon" style="font-size:36px" class="fa">&#xf09e;</i>
             <i style="font-size:36px" class="fa">&#xf2cc;</i>
         </p>
-        <button class="chooseBtn" (click)="confirmBooking('Luxury Suite', 'R2500')">Choose Room</button>
+        <button class="chooseBtn" (click)="confirmBooking(li.rname, li.rprice)">Choose Room</button>
   </div>
-  <div class="column" style="background-color:#bbb;">
-      <img class="image"
-          src="https://miro.medium.com/max/1838/1*X1K4Zi_mTg94imnWW-zfUw.jpeg"
-          alt="Avatar"
-        />
-        <h2>Family enSuite</h2>
-        <p> Family enSuite is a home away from home.
-            You and your family will be able to do the family and child friendly
-            activities closeby. Come relax on your home away from home with us.
-        </p>
-        
-        <p> From Only <b>R1 000</b> Per Room Per Night.</p>
-        <p style="letter-spacing:25px">
-        <i class="icon" style="font-size:36px" class="fa">&#xf09e;</i>
-        <i style="font-size:36px" class="fa">&#xf2cc;</i>
-        <i class="fa fa-bathtub" style="font-size:36px"></i>
-        </p>
-        <button class="chooseBtn" (click)="confirmBooking('Family Suite', 'R1000')">Choose Room</button>
-  </div>
-    <div class="column" style="background-color:#bbb;">
-       <img class="image"
-          src="https://www.pavillon-monceau.com/files/hotel/pavillon-monceau/chambres/chambre_standard_.jpg"
-          alt="Avatar"
-        />
-        <h2>Standard Room</h2>
-        <p> These types of rooms are for business travellers. People
-            or person who needs to prepare for their business meetings
-            the following day. It is ideal for employers who are hosting
-            meetings in our conference rooms to stay overnight.</p>
-
-                
-           <p> From Only <b>R1 500</b> Per Room Per Night.</p>
-
-           <p style="letter-spacing:25px"><i class="icon" style="font-size:36px" class="fa">&#xf0f5;</i>
-            <i class="icon" style="font-size:36px" class="fa">&#xf09e;</i>
-            <i style="font-size:36px" class="fa">&#xf2cc;</i>
-            <i class="fa fa-bathtub" style="font-size:36px"></i>
-           </p>
-           <button class="chooseBtn" (click)="confirmBooking('Standard Room', 'R1500')">Choose Room</button>
-  </div>
+    </div>
 </div>
 
 <div class="contact">

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from 'src/app/services/auth.service';
+import * as firebase from 'firebase/app';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -6,32 +11,48 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-
-  constructor() { }
-
+ 
+  lists:any;
+  user:any;
+  roomData:any;
+  
+  constructor(private auth:AuthService, public afAuth: AngularFireAuth) { 
+    // this.auth.afAuth.currentUser.getIdToken();
+    // this.user = afAuth.authState;
+    
+  }
+  roomsInfoList : any;
   ngOnInit(): void {
+    this.roomsInfoList =  this.auth.getRoomsInfo();
+    
   }
   confirmBooking( roomName:any, roomPrice:any){
 
     window.localStorage.setItem('roomName', roomName);
     window.localStorage.setItem('bookingPrice', roomPrice);
 
+    this.auth.addInfotoDatabase();
+
+    // this.auth.displayroomInfo();
     
-    window.location.href="payment";
+   window.location.href="payment";
 
     // const roomDetails = {roomName:roomName, roomPrice:roomPrice};
     
     // alert(roomName);
   }
+
+displayroomInfo(){
+
+}
   imgCollection = [
     {
-      image: 'https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
-      thumbImage: 'https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8bHV4dXJ5JTIwaG90ZWx8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80'
+      image: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Fbackground.jpg%3Falt%3Dmedia%26token%3Ddb413478-454b-4e75-89b7-926f54592187',
+      thumbImage: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Fbackground.jpg%3Falt%3Dmedia%26token%3Ddb413478-454b-4e75-89b7-926f54592187'
       // [imageSize]: {height: '100%', weight: '100%', space:3}
     }, {
-      image: 'https://s31606.pcdn.co/wp-content/uploads/2016/08/hotel-rooms.jpg',
-      thumbImage: 'https://s31606.pcdn.co/wp-content/uploads/2016/08/hotel-rooms.jpg'
+      image: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Fbungalow.jpg%3Falt%3Dmedia%26token%3Dbed16b12-5e9d-4ddc-9e71-88858cf987b1',
+      thumbImage: 'https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Fbungalow.jpg%3Falt%3Dmedia%26token%3Dbed16b12-5e9d-4ddc-9e71-88858cf987b1'
     }, {
       image: 'https://wallpaperaccess.com/full/2690549.jpg',
       thumbImage: 'https://wallpaperaccess.com/full/2690549.jpg'
@@ -43,4 +64,6 @@ export class HomeComponent implements OnInit {
       thumbImage: 'https://cst-media3.viomassl.com/3940/324702/1024x768s'
     }
 ];
+
+
 }

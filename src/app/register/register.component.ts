@@ -42,6 +42,7 @@ export class RegisterComponent implements OnInit {
 
 }
   validateForm(email:any, password:any){
+    this.errorMessage = "You are registered.";
     // if(email.length == 0){
     //   this.errorMessage = "Please enter email address.";
     //   return false;
