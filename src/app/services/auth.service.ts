@@ -15,7 +15,9 @@ export class AuthService {
  roomsInfoTable: AngularFireList<any>;
 
   constructor(private afu:AngularFireAuth, private router:Router, public ngZone: NgZone, private database:AngularFireDatabase ) { 
-
+    this.afu.idToken.subscribe(user =>{
+      console.log(user);
+    })
     //ref to roomsinfo table on firebase
     this.roomsInfoTable = this.database.list('roomsInfo');
    // this.afu.authState.subscribe((auth => {this.authState = auth}))
@@ -77,7 +79,7 @@ export class AuthService {
       roomRef.set({
         rprice : 1500,
         rname: "Standard Room",
-        rImage: "https://firebasestorage.googleapis.com/v0/b/lodge-a5824.appspot.com/o/sentinel.jpg?alt=media&token=3b3fe0ae-0d01-4c54-a65d-0bc52adbd7d7",
+        rImage: "https://www.gannett-cdn.com/-mm-/05b227ad5b8ad4e9dcb53af4f31d7fbdb7fa901b/c=0-64-2119-1259/local/-/media/USATODAY/USATODAY/2014/08/13/1407953244000-177513283.jpg",
         rDescription: "These types of rooms are for business travellers. People or person who needs to prepare for their business meetings the following day. It is ideal for employers who are hosting meetings in our conference rooms to stay overnight."
       })
     }

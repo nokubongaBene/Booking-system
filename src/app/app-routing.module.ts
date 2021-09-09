@@ -5,13 +5,14 @@ import {HomeComponent} from './home/home.component';
 import {DisplayInfoComponent} from './display-info/display-info.component';
 import {LogInComponent } from './log-in/log-in.component';
 import {RegisterComponent} from './register/register.component';
+import {BookingComponent} from './booking/booking.component';
 
 const routes: Routes = [
 
   {path: '', component: LogInComponent},
   {path: 'log-in', component:LogInComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'register', component:RegisterComponent},
+  {path: 'booking', component:BookingComponent},
   {path: 'payment', component:PaymentComponent},
   {path: 'display-info', component: DisplayInfoComponent}
   

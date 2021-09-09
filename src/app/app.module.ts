@@ -7,12 +7,14 @@ import { AngularFireModule } from "@angular/fire";
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 
+
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DisplayInfoComponent } from './display-info/display-info.component';
 import { RegisterComponent } from './register/register.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
-import {LogInComponent} from './log-in/log-in.component'
+import {LogInComponent} from './log-in/log-in.component';
+import { BookingComponent } from './booking/booking.component'
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {LogInComponent} from './log-in/log-in.component'
     DisplayInfoComponent,
     RegisterComponent,
     UserProfileComponent,
-    LogInComponent
+    LogInComponent,
+    BookingComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import {LogInComponent} from './log-in/log-in.component'
     AppRoutingModule,
     NgImageSliderModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

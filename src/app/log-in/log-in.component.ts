@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 import {AuthService} from 'src/app/services/auth.service';
 import {Router} from '@angular/router';
+import { initializeApp } from 'firebase/app';
+
 
 
 @Component({
@@ -15,10 +17,13 @@ export class LogInComponent implements OnInit {
   password:any="";
   errorMessage:any="";
   error:{name:string, message:string} = {name:"", message:""};
-  
+
+ 
+
    constructor(private authService:AuthService, private router:Router) {
-    
-       };
+  
+
+   }
 
   ngOnInit(): void {
 
@@ -53,4 +58,5 @@ export class LogInComponent implements OnInit {
        this.router.navigate(['/home']);
     }
   }
-  }
+ 
+}

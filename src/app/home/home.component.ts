@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 
     // this.auth.displayroomInfo();
     
-   window.location.href="payment";
+   window.location.href="booking";
 
     // const roomDetails = {roomName:roomName, roomPrice:roomPrice};
     
