@@ -60,4 +60,7 @@ html{
     text-decoration: none;
     cursor: pointer;
 }
+.top{
+    margin-top: 10vh;
+}
 

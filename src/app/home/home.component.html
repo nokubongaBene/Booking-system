@@ -4,8 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-        
+
+
 <h1 style="text-align:center">  Serenity Awaits </h1>
+<div class="top">
 <div style="text-align:center"> {{ (user | async) }} </div>
 <div class="row">
     <div *ngFor="let li of roomsInfoList | async">
@@ -25,7 +27,7 @@
             <i class="icon" style="font-size:36px" class="fa">&#xf09e;</i>
             <i style="font-size:36px" class="fa">&#xf2cc;</i>
         </p>
-        <button class="chooseBtn" (click)="confirmBooking(li.rname, li.rprice)">Choose Room</button>
+        <button class="chooseBtn" (click)="confirmBooking(li.rname, li.rprice,li.rDescription,li.rImage)">Choose Room</button>
   </div>
     </div>
 </div>
@@ -38,3 +40,4 @@
         <i class="fa fa-envelope w3-text-red" style="width:30px"> </i> Email: mail@mail.com<br>
 </div>
 
+</div>

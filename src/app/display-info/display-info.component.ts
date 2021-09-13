@@ -15,14 +15,15 @@ export class DisplayInfoComponent implements OnInit {
   city: any = window.localStorage.getItem('pCity');
   province: any = window.localStorage.getItem('pProvince');
   zipCode: any = window.localStorage.getItem('pZipCode');
-
+ rDescription:any = window.localStorage.getItem('rDescription');
+ rImage:any = window.localStorage.getItem('rImage');
   
   constructor() { }
 
   ngOnInit(): void {
   }
-  saveBooking(){
-    alert("saved");
-  }
+  // saveBooking(){
+  //   alert("saved");
+  // }
  
 }

@@ -31,7 +31,7 @@ html{
         width: 48%;
         height: 300px; 
         /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); */
-        margin-left: 300px; 
+        margin-left: 60vw; 
       }
       .image{
         position: absolute; 
@@ -139,7 +139,9 @@ body {
     float: right;
     color: grey;
   }
-
+  .top{
+    margin-top: 50%;
+}
   
   
  

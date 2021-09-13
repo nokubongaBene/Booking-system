@@ -1,3 +1,4 @@
+<div class="top">
 <div class="row">
 <div class="column">
 <div class="col-75">
@@ -18,27 +19,17 @@
         <div class="col-50">
             <label for="cvv">CVV</label>
                 <input type="text" id="cvv" name="cvv" onkeypress="return event.charCode>=48 && event.charCode<=57" maxlength="3" placeholder="CVV">
-                
+                <!-- <h2>{{roomName}} {{roomPrice}}</h2> -->
+                <input type="submit" value="Continue To Check Out" class="btn" (click)="selectRoom()" > 
             </div>
-
+            
     </div>
     <div class="columnM">
-    <div class="col-50">
-    <div *ngFor="let li of roomsInfoList | async; index as i">
-    <h3>{{li.rname}} (i) {{li.rprice}}</h3>
-    <img class="image"
-    src={{li.rImage}}
-    alt="Avatar"
-    
-  />
-  <input type="submit" value="Continue To Check Out" class="btn" (click)="selectRoom({i})">
+            <h2>
+            {{roomName}} {{roomPrice}} {{rDescription}}
+            </h2>
+                <h3><img class="image" [src]="rImage"/></h3>
+            </div> 
     </div>
-    
-    </div>
-    
 </div>
-</div>   
-
-<div class="cost">
-    
-    </div>
+</div>

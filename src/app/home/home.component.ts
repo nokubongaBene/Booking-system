@@ -24,12 +24,16 @@ export class HomeComponent implements OnInit {
   roomsInfoList : any;
   ngOnInit(): void {
     this.roomsInfoList =  this.auth.getRoomsInfo();
-    
+  //  this.user= this.auth.showUser();
+
+
   }
-  confirmBooking( roomName:any, roomPrice:any){
+  confirmBooking( roomName:any, roomPrice:any, roomDescription:any, rImage:any){
 
     window.localStorage.setItem('roomName', roomName);
     window.localStorage.setItem('bookingPrice', roomPrice);
+    window.localStorage.setItem('rDescription', roomDescription );
+    window.localStorage.setItem('rImage', rImage);
 
     this.auth.addInfotoDatabase();
 

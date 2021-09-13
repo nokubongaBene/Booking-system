@@ -1,11 +1,23 @@
 <div class="container">
     <div class="row">
-        <div class="text-info" *ngIf="authService.currentUser">
-            <h5 class="alldata">
+        <div class="text-info">
+            <h2 class="alldata">
                 user Information
-            </h5>
-            <h4><b>User ID:</b>{{authService.currentUserId}}</h4>
-            <h4><b>User Email:</b>{{authService.currentUserName}}</h4>
-            <!-- <button class="btn" (click)="authService.signOut()">Logout</button>  -->
+            </h2>
+            <div *ngFor="let li of bookingDetsList | async">
+            <h3>check In: {{li.bCheckIn}}</h3>
+            <h3>check Out: {{li.bCheckOut}}</h3>
+            <h3>Adult Guest(s): {{li.bAdultGuest}}</h3>
+            <h3>Kid(s) Guest: {{li.bKidGuest}}</h3>
+            <h3>First Name: {{li.bName}}</h3>
+            <h3>Last Name: {{li.bSurname}}</h3>
+            <h3>Email Address: {{li.bEmail}}</h3>
+            <h3> Cell Number: {{li.bcellNumber}}</h3>
+            <h3>Address: {{li.bAddress}}</h3>
+            <h3>City: {{li.bCity}}</h3>
+            <h3>Province: {{li.bProvince}}</h3>
+            <h3>Zip Code: {{li.bZipCode}}</h3>
+            </div>
+        </div>
     </div>
 </div>

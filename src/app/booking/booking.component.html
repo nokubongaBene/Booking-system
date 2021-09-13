@@ -1,4 +1,5 @@
 <!-- <p>booking works!</p> -->
+<div>
 <h2>Booking Details</h2>
 <div class="row">
  
@@ -45,30 +46,8 @@
 
     <div class="column">
         <div >
-    <ng-template #thenBlock>
-        <h2 *ngIf= "roomName == familyRoom;then thenBlock; else elseBlock; else elseBlock">
-        Family Room  R1000 per Night.
-        <img 
-        src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3" 
-        alt="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3">
+        <h2>{{roomName}}  {{rDescription}} {{roomPrice}}
         </h2>
-    </ng-template>
-        <ng-template #elseBlock>
-            <h2 *ngIf= "roomName == familyRoom; else elseBlock">
-                Luxury Room  R2500 per Night.
-                <img 
-                src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3" 
-                alt="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3">
-            </h2> 
-        </ng-template>
-        <ng-template #elseBlock>
-            <h2 *ngIf= "roomName == familyRoom; else elseBlock">
-                Standard Room  R1500 per Night.
-                <img 
-                src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3" 
-                alt="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Flodge-a5824.appspot.com%2Fo%2Flarge.jpg%3Falt%3Dmedia%26token%3Da81fb1ca-15f8-41c7-8153-b7a5ec872bc3">
-            </h2> 
-        </ng-template>
-    </div>
-
+        <h3><img class="image" [src]="rImage"/></h3>
+        </div>
 

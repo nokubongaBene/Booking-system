@@ -27,10 +27,10 @@ export class BookingComponent implements OnInit {
  phone=0;
  province="";
 
- roomName:any;
- familyRoom:any;
- luxuryRoom:any;
- standardRoom:any;
+ roomName:any= window.localStorage.getItem('rName');
+ roomPrice:any = window.localStorage.getItem('rPrice');
+ rDescription:any = window.localStorage.getItem('rDescription');
+ rImage:any = window.localStorage.getItem('rImage');
 
  roomsInfoList : any;
  ngOnInit(): void {
@@ -78,7 +78,7 @@ export class BookingComponent implements OnInit {
         window.localStorage.setItem('pProvince', this.province);
         window.localStorage.setItem('pZipCode', this.zipCode);
   
-        this.auth.bookingsInfoDatabase(this.checkIn, this.checkOut,this.numAdults, this.numKids, this.fname,this.fname,
+        this.auth.bookingsInfoDatabase(this.checkIn, this.checkOut,this.numAdults, this.numKids, this.fname,this.lname,
                       this.email, this.cellphone, this.address, this.city, this.province, this.zipCode);
      
         window.location.href="payment";

@@ -6,6 +6,7 @@ import {DisplayInfoComponent} from './display-info/display-info.component';
 import {LogInComponent } from './log-in/log-in.component';
 import {RegisterComponent} from './register/register.component';
 import {BookingComponent} from './booking/booking.component';
+import {UserProfileComponent} from './user-profile/user-profile.component';
 
 const routes: Routes = [
 
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'booking', component:BookingComponent},
   {path: 'payment', component:PaymentComponent},
-  {path: 'display-info', component: DisplayInfoComponent}
+  {path: 'display-info', component: DisplayInfoComponent},
+  {path: 'user-profile', component: UserProfileComponent}
   
 ];
 
@@ -23,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [PaymentComponent,HomeComponent, DisplayInfoComponent]
+export const routingComponents = [PaymentComponent,HomeComponent, DisplayInfoComponent,UserProfileComponent]

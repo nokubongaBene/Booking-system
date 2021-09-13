@@ -4,6 +4,7 @@ import {Router} from '@angular/router';
 import { auth } from 'firebase/app';
 import {AngularFireDatabase, AngularFireList} from '@angular/fire/database';
 import { Observable } from 'rxjs';
+//import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore'
 
 @Injectable({
   providedIn: 'root'
@@ -11,23 +12,41 @@ import { Observable } from 'rxjs';
 export class AuthService {
 
   authState:any= null;
+  user:any = false;
+  userID : any;
  // tutorials: Observable<any[]>;
  roomsInfoTable: AngularFireList<any>;
 
+ bookingDets: AngularFireList<any>;
+
   constructor(private afu:AngularFireAuth, private router:Router, public ngZone: NgZone, private database:AngularFireDatabase ) { 
+
+    this.afu.authState.subscribe(user =>{
+       this.userID = user?.uid;
+    })
+
     this.afu.idToken.subscribe(user =>{
-      console.log(user);
+      this.user=user;
     })
     //ref to roomsinfo table on firebase
     this.roomsInfoTable = this.database.list('roomsInfo');
    // this.afu.authState.subscribe((auth => {this.authState = auth}))
+   this.bookingDets =  this.database.list('bookingDets');
+
+   
+  }
+   showUser(){
+      return this.user;
   }
  
   getRoomsInfo(): Observable<any> {
     //return rooms info table and listen to any changes
     return this.roomsInfoTable.valueChanges();
   }
-  
+  getbookingDets(): Observable<any> {
+    console.log(this.userID);
+    return this.bookingDets.valueChanges();
+  }
   registerEmail(email:any, password:any) {
     return this.afu.createUserWithEmailAndPassword(email, password)
       .then((result : any) => {
@@ -87,17 +106,18 @@ export class AuthService {
     //  Observable<any> roomRef  = this.database.object('roomsInfo/standardRoom').valueChanges();
      //console.log(this.tutorials);
     }
-    bookingsInfoDatabase(numAdultG:any, numKidsGuest:any, name:any,surname:any, email:any, checkInDate:any,checkOutdate:any, cellNumber:any,
-                    address:any, city:any, province:any, zipCode:any){
-      const bookingDetails = this.database.object("bookingDets/userID")
+    bookingsInfoDatabase(checkIn:any, checkOut:any,numAdults:any, numKids:any, fname:any,lname:any,
+      email:any, cellphone:any, address:any, city:any, province:any, zipCode:any){
+      const bookingDetails = this.database.object("bookingDets/" +  this.userID)
       bookingDetails.set({
-        bAdultGuest: numAdultG,
-        bKidGuest: numKidsGuest,
-        bName : name,
-        bSurname: surname,
-        bCheckIn : checkInDate,
-        bCheckOut : checkOutdate,
-        bcellnumber: cellNumber,
+        bAdultGuest: numAdults,
+        bKidGuest: numKids,
+        bName : fname,
+        bSurname: lname,
+        bCheckIn : checkIn,
+        bCheckOut : checkOut,
+        bEmail: email,
+        bcellnumber: cellphone,
         bAddress: address,
         bCity: city,
         bProvince : province,

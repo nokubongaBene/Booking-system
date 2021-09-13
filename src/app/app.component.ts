@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {AuthService} from 'src/app/services/auth.service';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'booking-system';
 
@@ -28,7 +31,24 @@ export class AppComponent {
       thumbImage: 'https://cst-media3.viomassl.com/3940/324702/1024x768s'
     }
 ];
+userID:any = false;
+constructor(public authService:AuthService, public router: Router){
+  
+}
+ngOnInit(): void {
+this.getusertoken();
+}
 
-
-
+getusertoken(){
+  this.userID = this.authService.showUser();
+ if (!this.userID){
+   setTimeout(() => {
+     this.getusertoken();
+   }, 1000);
+ }
+ else if (this.userID){
+    if (this.router.url == '/log-in')
+   window.location.href = '/home'
+ }
+}
 }

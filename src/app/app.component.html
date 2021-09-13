@@ -6,9 +6,17 @@
 <!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<div *ngIf = "userID">
+<div class="topnav">
+        <a routerLink = "/home" href="#home">Home</a>
+        <a routerLink = "/booking" href="#booking">Booking</a>
+        <a routerLink = "/user-profile" href="#user-profile">Profile</a>
+      </div> 
+</div>
 <ng-image-slider autoSlide=true [autoSlide]="{interval: 3, stopOnHover: true}" [infinite]="true" [images]="imgCollection" [slideImage]="1" [imageSize]="{width: '100%', height: '50%'}" #nav></ng-image-slider>
 <div class="slide-container">
 </div>
+
 
 <router-outlet></router-outlet>
 
